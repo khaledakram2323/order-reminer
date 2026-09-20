@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 1. The solid background matching the theme -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="?android:attr/colorBackground" />
+        </shape>
+    </item>
+
+    <!-- 2. The centered watermark logo -->
+    <!-- 320dp is a good scale. We use alpha to make it subtle -->
+    <item
+        android:width="320dp"
+        android:height="320dp"
+        android:gravity="center">
+
+        <bitmap
+            android:src="@drawable/logolight"
+            android:alpha="0.12"
+            android:gravity="fill" />
+    </item>
+</layer-list>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Order Reminders</string>
+    <string name="items_label">الأصناف:</string>
+    <string name="mark_done_label">تم الإنجاز</string>
+    <string name="delete_label">حذف</string>
+    <string name="undo_done_label">تراجع عن الإنجاز</string>
+</resources>

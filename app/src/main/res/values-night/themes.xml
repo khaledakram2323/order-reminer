@@ -1,0 +1,49 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.OrderReminders" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_cyan</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+
+        <!-- Dark Mode Text Colors: Pure White -->
+        <item name="android:textColorPrimary">@color/brand_cyan</item>
+        <item name="android:textColorSecondary">@color/brand_cyan</item>
+        <item name="colorOnBackground">@color/brand_cyan</item>
+        <item name="colorOnSurface">@color/brand_cyan</item>
+        <item name="colorOnSurfaceVariant">@color/brand_cyan</item>
+
+        <!-- تثبيت ألوان التحكم والفوكس على اللبني -->
+        <item name="colorControlActivated">@color/brand_cyan</item>
+        <item name="colorControlHighlight">@color/brand_cyan_alpha</item>
+        <item name="colorControlNormal">@color/brand_cyan</item>
+
+        <!-- تثبيت ألوان محدد النص -->
+        <item name="android:textSelectHandle">@color/brand_cyan</item>
+        <item name="android:textSelectHandleLeft">@color/brand_cyan</item>
+        <item name="android:textSelectHandleRight">@color/brand_cyan</item>
+        <item name="android:textColorHighlight">@color/brand_cyan_alpha</item>
+
+        <!-- تثبيت إطارات النصوص والهينت على اللون اللبني -->
+        <item name="textInputStyle">@style/Widget.Material3.TextInputLayout.OutlinedBox</item>
+        <item name="boxStrokeColor">@color/brand_cyan</item>
+        <item name="boxStrokeErrorColor">@color/brand_cyan</item>
+        <item name="hintTextColor">@color/brand_cyan</item>
+
+        <item name="radioButtonStyle">@style/Widget.Material3.CompoundButton.RadioButton</item>
+    </style>
+
+    <style name="Theme.OrderReminders" parent="Base.Theme.OrderReminders" />
+
+    <style name="Theme.OrderReminders.Dialog" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="colorPrimary">@color/brand_cyan</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+    <style name="Widget.OrderReminders.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">@dimen/card_corner_radius</item>
+        <item name="cardElevation">@dimen/card_elevation</item>
+    </style>
+
+</resources>

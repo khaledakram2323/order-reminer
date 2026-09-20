@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layoutDirection="rtl">
+
+    <!-- Background Watermark -->
+    <ImageView
+        android:id="@+id/ivBackgroundWatermark"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerInside"
+        android:alpha="0.08"
+        android:contentDescription="@null" />
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:contentInsetEnd="0dp"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="16dp">
+
+                <!-- Right Side: Logo -->
+                <ImageView
+                    android:id="@+id/btnPharmacyDetails"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="بيانات الصيدلية" />
+
+                <!-- Exact Center: The Title -->
+                <TextView
+                    android:id="@+id/tvToolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="إضافة أوردر جديد"
+                    android:textColor="@color/brand_cyan"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_large">
+
+            <!-- Customer Info Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="بيانات العميل"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="@dimen/spacing_medium" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="كود العميل "
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/text_input_box_stroke"
+                app:hintTextColor="@color/brand_cyan"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                android:layout_marginBottom="@dimen/spacing_medium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCustomerCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="رقم التليفون"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/text_input_box_stroke"
+                app:hintTextColor="@color/brand_cyan"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                android:layout_marginBottom="@dimen/spacing_large">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Order Details -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تفاصيل الأوردر"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="@dimen/spacing_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="نوع الأوردر"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnToggleOrderType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="توصيل"
+                app:icon="@drawable/shipping"
+                app:iconGravity="textStart"
+                app:strokeColor="@color/brand_cyan"
+                app:backgroundTint="@color/toggle_btn_bg"
+                android:textColor="@color/toggle_btn_text"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_marginBottom="@dimen/spacing_medium" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الأولوية"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/togglePriorityGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                app:checkedButton="@id/btnPriorityNormal"
+                android:layout_marginBottom="@dimen/spacing_large">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPriorityNormal"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="عادي"
+                    app:strokeColor="@color/brand_cyan"
+                    app:backgroundTint="@color/toggle_btn_bg"
+                    android:textColor="@color/toggle_btn_text"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPriorityUrgent"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="مستعجل"
+                    app:strokeColor="@color/brand_cyan"
+                    app:backgroundTint="@color/toggle_btn_bg"
+                    android:textColor="@color/toggle_btn_text"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPriorityShortage"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="نواقص"
+                    app:strokeColor="@color/brand_cyan"
+                    app:backgroundTint="@color/toggle_btn_bg"
+                    android:textColor="@color/toggle_btn_text"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="وقت التذكير"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="@dimen/spacing_medium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/spacing_medium">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPickDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="تاريخ التذكير"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="@color/text_input_box_stroke"
+                    app:hintTextColor="@color/brand_cyan"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:endIconMode="custom"
+                    app:endIconTint="#00A8E8"
+                    app:endIconDrawable="@drawable/calendar_today">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tvSelectedDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:cursorVisible="false" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:baselineAligned="false"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="@dimen/spacing_large">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="ساعة"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                    app:boxStrokeColor="@color/text_input_box_stroke"
+                    app:hintTextColor="@color/brand_cyan"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etHour"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textAlignment="center"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=":"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/brand_cyan"
+                    android:layout_marginHorizontal="@dimen/spacing_small" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="دقيقة"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+                    app:boxStrokeColor="@color/text_input_box_stroke"
+                    app:hintTextColor="@color/brand_cyan"
+                    app:boxCornerRadiusTopStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusBottomEnd="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etMinute"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:textAlignment="center" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggleAmPm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_medium"
+                    app:singleSelection="true"
+                    android:layout_marginTop="2dp"
+                    app:selectionRequired="true"
+                    app:checkedButton="@id/btnAm">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAm"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="54dp"
+                        android:text="صباحاً"
+                        app:strokeColor="@color/brand_cyan"
+                        android:textColor="@color/toggle_btn_text"
+                        app:backgroundTint="@color/toggle_btn_bg"
+                        app:cornerRadius="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnPm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="54dp"
+                        android:text="مساءً"
+                        app:strokeColor="@color/brand_cyan"
+                        app:cornerRadius="8dp"
+                        app:backgroundTint="@color/toggle_btn_bg"
+                        android:textColor="@color/toggle_btn_text"
+                        style="@style/Widget.Material3.Button.OutlinedButton" />
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+            </LinearLayout>
+
+            <!-- Items Section -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_medium">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="الأصناف"
+                    android:textColor="?attr/colorPrimary"
+                    android:textStyle="bold"
+                    android:textSize="18sp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/itemsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <Button
+                android:id="@+id/btnAddItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:text="+ إضافة صنف"
+                android:textColor="@color/brand_cyan"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <!-- Notes Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="الملاحظات"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:layout_marginBottom="@dimen/spacing_small" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ملاحظات إضافية"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/text_input_box_stroke"
+                app:hintTextColor="@color/brand_cyan"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                android:layout_marginBottom="@dimen/spacing_medium">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:minLines="3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnSave"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="@dimen/spacing_extra_large"
+                android:layout_marginBottom="@dimen/spacing_extra_large"
+                android:text="حفظ الأوردر"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:backgroundTint="#00A8E8"
+                app:cornerRadius="16dp"
+                android:stateListAnimator="@animator/button_scale" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

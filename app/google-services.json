@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "498246768528",
+    "project_id": "orderreminders-44652",
+    "storage_bucket": "orderreminders-44652.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498246768528:android:6983c9759271385d318515",
+        "android_client_info": {
+          "package_name": "com.example.orderreminders"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-tcjfv8tE0zEGonZixsaaceyBhqQLFA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

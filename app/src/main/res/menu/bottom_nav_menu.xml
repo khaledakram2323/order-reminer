@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_add_order"
+        android:icon="@drawable/selector_add"
+        android:title="أوردر جديد" />
+    <item
+        android:id="@+id/nav_orders"
+        android:icon="@drawable/selector_assignment"
+        android:title="الأوردرات" />
+    <item
+        android:id="@+id/nav_archive"
+        android:icon="@drawable/selector_archive"
+        android:title="الأرشيف" />
+    <item
+        android:id="@+id/nav_pharmacy_details"
+        android:icon="@drawable/nav_pharmacy_selector"
+        android:title="الصيدلية" />
+</menu>

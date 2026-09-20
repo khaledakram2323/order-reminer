@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/spacing_medium"
+    style="@style/Widget.Material3.CardView.Elevated"
+    app:cardBackgroundColor="?attr/colorSurface"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="12dp"
+    app:strokeColor="@color/brand_cyan"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_medium"
+        android:layoutDirection="rtl">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="اسم الصنف"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/text_input_box_stroke"
+            app:hintTextColor="@color/brand_cyan"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            android:layout_marginBottom="@dimen/spacing_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textAutoCorrect" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvAvailabilityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="التوفر"
+            android:textSize="14sp"
+            android:layout_marginBottom="@dimen/spacing_small"
+            android:textColor="?attr/colorOnSurface" />
+
+        <!-- Replaced vertical RadioGroup with Exposed Dropdown Menu (Spinner) for space saving -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxStrokeColor="@color/text_input_box_stroke"
+            app:hintTextColor="@color/brand_cyan"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            android:layout_marginBottom="@dimen/spacing_medium">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/spinnerAvailability"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="متوفرة" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilWarehouse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="اسم المخزن"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/text_input_box_stroke"
+            app:hintTextColor="@color/brand_cyan"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            android:visibility="gone"
+            android:layout_marginBottom="@dimen/spacing_medium">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etWarehouse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnDeleteItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:text="حذف الصنف"
+            android:textColor="@color/red"
+            android:layout_gravity="start" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

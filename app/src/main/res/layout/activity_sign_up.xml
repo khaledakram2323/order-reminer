@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layoutDirection="rtl">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:padding="24dp">
+
+        <!-- Background Auth Watermark -->
+        <ImageView
+            android:id="@+id/ivAuthWatermark"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/logolight"
+            android:scaleType="centerInside"
+            android:alpha="0.06"
+            android:scaleX="1.8"
+            android:scaleY="1.8"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Dark/Light Theme Toggle Button -->
+        <ImageView
+            android:id="@+id/btnThemeToggle"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/dark_mode"
+            app:tint="@color/brand_cyan"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="تغيير المظهر"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="إنشاء حساب جديد"
+            android:textColor="@color/brand_cyan"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tvSubtitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="قم بإنشاء حساب جديد لصيدليتك"
+            android:textColor="@color/brand_cyan"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/tilPharmacyName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+        <!-- Pharmacy Name Field with Programmatic Focus Icon -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPharmacyName"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:hint="اسم الصيدلية"
+            android:textColorHint="@color/brand_cyan"
+            app:boxStrokeColor="@color/selector_box_stroke"
+            app:hintTextColor="@color/brand_cyan"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/pharmacy"
+            app:endIconTint="@color/brand_cyan"
+            app:layout_constraintBottom_toTopOf="@id/tilPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPharmacyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textColor="@color/brand_cyan" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Password Field with On-Click Password Visibility Toggle Lock Icon -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="كلمة السر (6 أحرف على الأقل)"
+            android:textColorHint="@color/brand_cyan"
+            app:boxStrokeColor="@color/selector_box_stroke"
+            app:hintTextColor="@color/brand_cyan"
+            app:endIconMode="password_toggle"
+            app:endIconDrawable="@drawable/selector_lock_toggle"
+            app:endIconTint="@color/brand_cyan"
+            app:layout_constraintBottom_toTopOf="@id/tilConfirmPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilPharmacyName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="@color/brand_cyan" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Confirm Password Field with On-Click Password Visibility Toggle Lock Icon -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilConfirmPassword"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:hint="تأكيد كلمة السر"
+            android:textColorHint="@color/brand_cyan"
+            app:boxStrokeColor="@color/selector_box_stroke"
+            app:hintTextColor="@color/brand_cyan"
+            app:endIconMode="password_toggle"
+            app:endIconDrawable="@drawable/selector_lock_toggle"
+            app:endIconTint="@color/brand_cyan"
+            app:layout_constraintBottom_toTopOf="@id/btnSignUp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilPassword">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="@color/brand_cyan" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSignUp"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:text="إنشاء حساب"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/brand_cyan"
+            app:rippleColor="@color/brand_white"
+            app:cornerRadius="12dp"
+            android:stateListAnimator="@animator/button_scale"
+            app:layout_constraintBottom_toTopOf="@id/progressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilConfirmPassword" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:indeterminateTint="@color/brand_cyan"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/tvLoginLink"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSignUp" />
+
+        <!-- Bottom Clickable Text with Darkening State Selector on Press -->
+        <TextView
+            android:id="@+id/tvLoginLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="لديك حساب بالفعل؟ تسجيل الدخول"
+            android:textColor="@color/selector_text_link_color"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressBar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
